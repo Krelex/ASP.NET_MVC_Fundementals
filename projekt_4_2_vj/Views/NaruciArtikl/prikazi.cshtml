@@ -1,0 +1,26 @@
+﻿@model projekt_4_2_vj.Models.Artikl
+
+@{
+    Layout = null;
+    decimal ukupno = Model.Cijena * Model.Kolicina;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>prikazi</title>
+</head>
+<body>
+    <div> 
+        <label>Kategorija : @Model.Kategorija</label> <br />
+        <label>Naziv : @Model.Naziv</label> <br />
+        <label>Cijena : @Model.Cijena</label> <br />
+        <label>Kolicina : @Model.Kolicina</label> <br />
+
+        <strong>UKUPNA CIJENA : @ukupno</strong> <br />
+
+    </div>
+</body>
+</html>

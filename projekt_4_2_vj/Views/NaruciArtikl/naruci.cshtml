@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>naruci</title>
+</head>
+<body>
+    <div>
+        @ViewBag.kolicina
+    </div>
+    <div> 
+        <form action="~/NaruciArtikl/naruci" method="post">
+        <label>Naziv : </label>
+        <select name="Kategorija">
+            <option value="povrce">Povrce</option>
+            <option value="voce">Voce</option>
+            <option value="meso">Meso</option>
+            <option value="riba">Riba</option>
+        </select> <br />
+        <label>Naziv : </label>
+        <input type="text" name="Naziv"/> <br/>
+        <label>Cijena : </label>
+        <input type="text" name="Cijena"/> <br/>
+        <label>Kolicina : </label>
+        <input type="text" name="Kolicina"/> <br/>
+        <input type="submit" name="Naruci" />
+        </form>
+    </div>
+</body>
+</html>

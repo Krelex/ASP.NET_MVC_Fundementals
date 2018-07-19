@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .logo{
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="logo">Big logo !</h1>
+    <hr />
+    <a href="~/LayoutSection/Stranica1" >Stranica1</a>
+    <a href="~/LayoutSection/Stranica2" >Stranica2</a>
+    <hr />
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

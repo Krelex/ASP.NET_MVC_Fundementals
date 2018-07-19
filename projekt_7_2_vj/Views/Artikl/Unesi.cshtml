@@ -1,0 +1,57 @@
+﻿@model List<projekt_7_2_vj.Models.Artikl>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Unesi</title>
+</head>
+<body>
+    <div>
+        <h2>Artikli</h2> 
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Naziv
+                    </td>
+                    <td>
+                        Cijena
+                    </td>
+                    <td>
+                        Kolicina
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Kategorija
+                        </td>
+                        <td>
+                            @item.Naziv
+                        </td>
+                        <td>
+                            @item.Cijena
+                        </td>
+                        <td>
+                            @item.Kolicina
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.ActionLink("Povratak na unos", "Dodaj")
+    </div>
+</body>
+</html>

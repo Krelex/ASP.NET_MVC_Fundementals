@@ -1,0 +1,63 @@
+﻿@model string
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Izracunaj</title>
+</head>
+<body>
+    @if(ViewBag.error != null)
+    {
+        <h1>Error : @ViewBag.error</h1>
+        <p>molimo vas unesite brojeve ponovo!</p>
+    }
+    <div>
+        @using (Html.BeginForm())
+        {
+            <input type="text" name="prvi" value="Prvi" />
+            <input type="text" name="drugi" value="Drugi" />
+
+            <input type="submit" name="operacija" value="+"  />
+            <input type="submit" name="operacija" value="-" />
+            <input type="submit" name="operacija" value="*" />
+            <input type="submit" name="operacija" value="/" />
+        } 
+    </div><br/>
+    <hr />
+    <div>
+        @switch (Model)
+        {
+            case "+":
+                {
+                    <label>@ViewBag.prvi + @ViewBag.drugi =  @(ViewBag.prvi + ViewBag.drugi)</label>
+                    break;
+                }
+            case "-":
+                {
+                    <label>@ViewBag.prvi - @ViewBag.drugi = @(ViewBag.prvi - ViewBag.drugi)</label>
+                    break;
+                }
+            case "*":
+                {
+                    <label>@ViewBag.prvi * @ViewBag.drugi =  @(ViewBag.prvi * ViewBag.drugi)</label>
+                    break;
+                }
+            case "/":
+                {
+                    <label>@ViewBag.prvi / @ViewBag.drugi = @(ViewBag.prvi / ViewBag.drugi)</label>
+                    break;
+                }
+            default:
+                {
+                    <label>Unesite ispravne parametre za izracun!</label>
+                    break;
+                }
+        }
+    </div>
+</body>
+</html>

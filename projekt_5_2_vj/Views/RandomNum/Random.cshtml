@@ -1,0 +1,33 @@
+﻿@model System.Int32
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Random</title>
+</head>
+<body>
+    <h1>@Model</h1>
+    <div>
+    @if(Model < 10)
+    {
+       <h5>Broj je JEDNOZNAMENKAST</h5>
+    }
+    else if (Model < 100)
+    {
+        <h5>Broj je DVOZNAMENKAST</h5>
+    }
+    else
+    {
+        <h5>Broj je TROZNAMENKAST</h5>
+    }
+
+
+
+    </div>
+</body>
+</html>

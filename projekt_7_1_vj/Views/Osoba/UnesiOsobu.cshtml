@@ -1,0 +1,53 @@
+﻿@model projekt_7_1_vj.Models.Osoba
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UnesiOsobu</title>
+    <style>
+        .validation-summary-errors{
+            color: red;
+            font-weight: bold;
+        }
+        .field-validation-error{
+            color: red;
+        }
+        .field-validation-valid {
+            display: none;
+        }
+        .input-validation-error {
+            border: 1px solid #e80c4d;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @Html.ValidationSummary(true)
+    </div>
+    <div>
+        @using (Html.BeginForm("ProvjeriOsobu","Osoba"))
+        {
+            <label>Ime :</label>
+            <input type="text" name="Ime" placeholder="Unesite Ime" /> 
+            @Html.ValidationMessageFor(m => m.Ime)<br />
+            <label>Prezime :</label>
+            <input type="text" name="Prezime" placeholder="Unesite Prezime" /> 
+            @Html.ValidationMessageFor(m => m.Prezime)<br />
+            <label>Datum :</label>
+            <input type="date" name="DatumRod" /> 
+            @Html.ValidationMessageFor(m => m.DatumRod, "Unesite ispravan datum!") <br />
+            <label>Mobitel :</label>
+            <input type="text" name="Mobitel" placeholder="Unesite Broj mobitela" /> 
+            @Html.ValidationMessageFor(m => m.Mobitel)<br />
+
+            <input type="submit" value="Posalji" />
+        } 
+    </div>
+</body>
+</html>

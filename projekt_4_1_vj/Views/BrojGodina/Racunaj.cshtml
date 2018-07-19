@@ -1,0 +1,37 @@
+﻿@model  TimeSpan?
+@{
+    Layout = null;
+
+    int? godina;
+    if (Model != null)
+    {
+        godina = Model.Value.Days / 365;
+    }
+    else
+    {
+        godina = null;
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Racunaj</title>
+</head>
+<body>
+    <div> 
+        <form action="~/BrojGodina/Racunaj" method="post">
+            <label>Upisite zeljenu godinu i mjesec</label><br/>
+            <input type="date" name="datum" /><br/>
+            @if (Model.HasValue)
+            {
+                <label>broj dana kolko je proslo : @Model.Value.Days</label><br/>
+                <label>broj Godina kolko je proslo :  @godina </label>
+            }
+            <input type="submit" value="Izracunaj" />
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model bool?
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProvjeriOdgovor</title>
+</head>
+<body>
+    <div> 
+        @if (Model == null)
+        {
+            <form action="~/TocanOdgovor/ProvjeriOdgovor" method="post">
+                <label>Koja je orginalana boja Ferarija?</label> <br />
+                <input type="radio" name="odgovor" value="crveni" /> Crveni <br />
+                <input type="radio" name="odgovor" value="plavi" /> Plavi <br />
+                <input type="radio" name="odgovor" value="zeleni" /> Zeleni <br />
+                <input type="radio" name="odgovor" value="zuti" /> Zuti <br />
+                <input type="submit" value="odgovri" />
+            </form>
+        }else
+        {
+            if(@Model == true)
+            {
+                <label>Odogovore je tocan!</label> <br />
+                <a href="~/TocanOdgovor/ProvjeriOdgovor">Povratak</a>
+            }
+            else
+            {
+                <label>Odogovore je ne tocan!</label> <br />
+                <a href="~/TocanOdgovor/ProvjeriOdgovor">Povratak</a>
+            }
+        }
+
+
+
+    </div>
+</body>
+</html>

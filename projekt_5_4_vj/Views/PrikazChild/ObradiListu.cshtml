@@ -1,0 +1,48 @@
+﻿@model List<projekt_5_4_vj.Models.Artikli>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ObradiListu</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        Naziv
+                    </td>
+                    <td>
+                        Cijena
+                    </td>
+                    <td>
+                        Kategorija
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Naziv
+                        </td>
+                        <td>
+                            @item.Cijena
+                        </td>
+                        <td>
+                            @Html.Action("OdrediKategoriju", item)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

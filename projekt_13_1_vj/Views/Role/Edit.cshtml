@@ -1,0 +1,19 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <label>Upisite Ime :</label>
+        <input type="text" name="Name" value="@Model.Name"/>
+
+        <input type="submit" value="Posalji" /> 
+    }
+</div>
+

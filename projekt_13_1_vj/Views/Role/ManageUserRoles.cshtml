@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "ManageUserRoles";
+}
+
+<h2>ManageUserRoles</h2>
+<a href="~/Role/Create">Create New Role</a> |
+<a href="~/Role/ManageUserRoles">Manage User Roles</a>
+
+<div>
+    <h3>Role Add to User</h3>
+    @using (Html.BeginForm("RoleAddToUser","Role"))
+    {
+        <label>Username : </label>
+        <input type="text" name="Username"/>
+        @Html.DropDownList("RoleName", new SelectList(Model, "Id", "Name"), "--Select--");
+
+        <input type="submit" value="Save" />
+    }
+</div>
+
+<div>
+    <h3>Get Roles for a User</h3>
+    @using (Html.BeginForm("GetRoles", "Role"))
+    {
+        <label>Username : </label>
+        <input type="text" name="Username" />
+
+        <input type="submit" value="Get Roles for this User" />
+    }
+</div>
+
+@if(ViewBag.Role != null)
+{
+    <ol>
+        @foreach (var item in ViewBag.Role)
+        {
+            <li>@item</li>
+        }
+    </ol>
+}
+
+
+<div>
+    <h3>Delete A User from a Role</h3>
+    @using (Html.BeginForm("DeleteRoleForUser", "Role"))
+    {
+        <label>Username : </label>
+        <input type="text" name="Username" />
+        @Html.DropDownList("RoleName", new SelectList(Model, "Id", "Name"), "--Select--");
+
+        <input type="submit" value="Delete this user from Role" />
+    }
+</div>
+
+

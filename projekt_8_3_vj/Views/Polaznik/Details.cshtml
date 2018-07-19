@@ -1,0 +1,25 @@
+﻿@model projekt_8_3_vj.Models.PolaznikModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    <hr />
+    <label>Id Polaznik: <label> <br />
+    <p>@Model.IdPolaznik</p> <br />
+    <label>Ime : <label> <br />
+    <p>@Model.Ime</p> <br />
+    <label>Prezime : <label> <br />
+    <p>@Model.Prezime</p> <br />
+    <label>Email : <label> <br />
+    <p>@Model.Email</p> <br />
+    <label>Grad : <label> <br />
+    <p>@Model.ImeGrad()</p> <br />
+
+    <a href="~/Polaznik/Edit?id=@Model.IdPolaznik">Edit</a> | <a href="~/Polaznik/List">Back to List</a>
+</div>
+
+

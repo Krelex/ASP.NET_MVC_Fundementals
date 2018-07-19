@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Prijavi se na tecaj :";
+    var gradovi = ViewBag.Gradovi as List<projekt_8_3_vj.Models.GradModel>;
+    var Tecajevi = ViewBag.Tecaji as List<projekt_8_3_vj.Models.TecajModel>;
+}
+
+<div> 
+    <h2>@ViewBag.Title</h2>
+    @using (Html.BeginForm())
+    {
+        <label>Ime : </label> <br />
+        <input type="text" name="Ime" /> <br />
+
+        <label>Prezime :</label><br />
+        <input type="text" name="Prezime" /> <br />
+
+        <label>Email :</label><br />
+        <input type="text" name="Email" /> <br />
+
+        <label>Grad :</label><br />
+        @Html.DropDownList("IdGrad", new SelectList(gradovi, "IdGrad", "Naziv"), "--Chose Grad--")<br />
+
+        <label>Tecaj :</label><br />
+        @Html.DropDownList("IdTecaj", new SelectList(Tecajevi, "IdTecaj", "Naziv"), "--Chose Tecaj--")<br />
+
+        <input type="submit" value="Upisi" />
+    }
+</div>
+

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    @using (Html.BeginForm())
+    {
+                    
+            <label>Naziv : </label> <br />
+            <input type="text" name="Naziv" /> <br />
+
+            <label>Opis :</label><br />
+            <input type="text" name="Opis" /> <br />
+
+
+            <input type="submit" value="Create" /> 
+            <a href="~/Tecaj/List">Back to List</a>
+    }
+</div>
+

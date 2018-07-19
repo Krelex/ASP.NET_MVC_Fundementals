@@ -1,0 +1,25 @@
+﻿@model projekt_8_3_vj.Models.TecajModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" name="IdTecaj" value="@Model.IdTecaj" />
+
+        <label>Naziv : </label> <br />
+        <input type="text" name="Naziv" value="@Model.Naziv"/> <br />
+
+        <label>Opis :</label><br />
+        <input type="text" name="Opis" value="@Model.Opis"/> <br />
+
+
+        <input type="submit" value="Update" />
+        <a href="~/Tecaj/List">Back to List</a>
+    }
+</div>
+

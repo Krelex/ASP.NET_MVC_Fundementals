@@ -1,0 +1,21 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="~/Upis/Unos">Naslovnica</a> | <a href="~/Polaznik/List">Polaznici</a> | <a href="~/Tecaj/List">Tecaj</a> | <a href="~/MasterDetails/MasterDetails">Pregled Upisa</a>
+        </div>
+    </header>
+    <hr />
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>POU Algebra © All rights reserved - @DateTime.Now.Year</p>
+    </footer>
+</body>
+</html>

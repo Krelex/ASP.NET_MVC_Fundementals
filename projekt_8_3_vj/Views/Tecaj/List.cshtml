@@ -1,0 +1,48 @@
+﻿@model List<projekt_8_3_vj.Models.TecajModel>
+
+@{
+    ViewBag.Title = "Tecaj List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    <a href="~/Tecaj/Create">Create New</a>
+
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Id
+                </td>
+                <td>
+                    Naziv
+                </td>
+                <td>
+                    Opis
+                </td>
+                <td>
+                    Action
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tecaj in Model)
+            {
+                <tr>
+                    <td>
+                        @tecaj.IdTecaj
+                    </td>
+                    <td>
+                        @tecaj.Naziv
+                    </td>
+                    <td>
+                        @tecaj.Opis
+                    </td>
+                    <td><a href="~/Tecaj/Edit?id=@tecaj.IdTecaj">Edit </a>|<a href="~/Tecaj/Details?id=@tecaj.IdTecaj"> Details </a> | <a href="~/Tecaj/Delete?id=@tecaj.IdTecaj"> Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

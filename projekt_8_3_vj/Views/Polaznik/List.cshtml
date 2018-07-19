@@ -1,0 +1,60 @@
+﻿@model List<projekt_8_3_vj.Models.PolaznikModel>
+
+@{
+    ViewBag.Title = "Polaznik List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    <a href="~/Polaznik/Create">Create New</a>
+
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Id
+                </td>
+                <td>
+                    Ime
+                </td>
+                <td>
+                    Prezime
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    Grad
+                </td>
+                <td>
+                    Action
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var polaznik in Model)
+            {
+                <tr>
+                    <td>
+                        @polaznik.IdPolaznik
+                    </td>
+                    <td>
+                        @polaznik.Ime
+                    </td>
+                    <td>
+                        @polaznik.Prezime
+                    </td>
+                    <td>
+                        @polaznik.Email
+                    </td>
+                    <td>
+                        @polaznik.ImeGrad()
+                    </td>
+                    <td><a href="~/Polaznik/Edit?id=@polaznik.IdPolaznik">Edit </a>|<a href="~/Polaznik/Details?id=@polaznik.IdPolaznik"> Details </a> | <a href="~/Polaznik/Delete?id=@polaznik.IdPolaznik"> Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

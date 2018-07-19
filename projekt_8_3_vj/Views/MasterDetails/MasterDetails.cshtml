@@ -1,0 +1,60 @@
+﻿@model List<projekt_8_3_vj.Models.UpisDetailModel>
+
+@{
+    ViewBag.Title = "MasterDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Ime
+                </td>
+                <td>
+                    Prezime
+                </td>
+                <td>
+                    Email
+                </td>
+                <td>
+                    Naziv
+                </td>
+                <td>
+                    Opis
+                </td>
+                <td>
+                    Datum
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var master in Model)
+            {
+                <tr>
+                    <td>
+                        @master.Ime
+                    </td>
+                    <td>
+                        @master.Prezime
+                    </td>
+                    <td>
+                        @master.Email
+                    </td>
+                    <td>
+                        @master.Naziv
+                    </td>
+                    <td>
+                        @master.Opis
+                    </td>
+                    <td>
+                        @master.DatumUpisa.Date.ToShortDateString()
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

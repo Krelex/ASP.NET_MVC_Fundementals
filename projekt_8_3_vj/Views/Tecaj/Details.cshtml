@@ -1,0 +1,21 @@
+﻿@model projekt_8_3_vj.Models.TecajModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    <hr />
+    <label>Id Tecaj : <label> <br />
+    <p>@Model.IdTecaj</p> <br />
+    <label>Naziv : <label> <br />
+    <p>@Model.Naziv </p> <br />
+    <label>Opis : <label> <br />
+    <p>@Model.Opis</p> <br />
+
+    <a href="~/Tecaj/Edit?id=@Model.IdTecaj">Edit</a> | <a href="~/Tecaj/List">Back to List</a>
+</div>
+
+

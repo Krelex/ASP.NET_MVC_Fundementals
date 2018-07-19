@@ -1,0 +1,33 @@
+﻿@model projekt_8_3_vj.Models.PolaznikModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<projekt_8_3_vj.Models.GradModel> gradovi = ViewBag.Gradovi as List<projekt_8_3_vj.Models.GradModel>;
+    
+}
+
+<div>
+    <h2>@ViewBag.Title</h2>
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" name="IdPolaznik" value="@Model.IdPolaznik" />
+
+        <label>Ime : </label> <br />
+        <input type="text" name="Ime" value="@Model.Ime"/> <br />
+
+        <label>Prezime :</label><br />
+        <input type="text" name="Prezime" value="@Model.Prezime"/> <br />
+
+        <label>Email :</label><br />
+        <input type="text" name="Email" value="@Model.Email" /> <br />
+
+        <label>Grad :</label>
+        @Html.DropDownList("IdGrad", new SelectList(gradovi, "IdGrad" , "Naziv", Model.IdGrad)) <br />
+
+
+        <input type="submit" value="Update" />
+        <a href="~/Polaznik/List">Back to List</a>
+    }
+</div>
+

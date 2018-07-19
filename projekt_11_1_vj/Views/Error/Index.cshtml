@@ -1,0 +1,19 @@
+﻿@model HandleErrorInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h2>Nazalost dogodila se pogreska </h2>
+        <p>tipa : @Model.Exception.Message</p>
+    </div>
+</body>
+</html>

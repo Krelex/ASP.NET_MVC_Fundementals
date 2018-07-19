@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Korijen</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <label>Upisite Broj :</label>
+            <input type="text" name="broj" />
+            <input type="submit" value="Posalji" />
+        }
+
+        @if (ViewBag.Rezultat != null)
+        {
+            <label> Rezultat @ViewBag.Rezultat </label>
+        }
+    </div>
+</body>
+</html>

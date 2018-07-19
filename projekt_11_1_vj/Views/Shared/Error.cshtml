@@ -1,0 +1,20 @@
+﻿@model System.Web.Mvc.HandleErrorInfo 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <div> 
+        <h2>Nazalost dogodila se greska! :(</h2>
+
+        <p>@Model.Exception.Message @ViewBag.Error</p>
+    </div>
+</body>
+</html>

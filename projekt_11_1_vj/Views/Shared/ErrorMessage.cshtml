@@ -1,0 +1,20 @@
+﻿@model HandleErrorInfo
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ErrorMessage</title>
+</head>
+<body>
+    <div> 
+        <h1>Dogodio se error tipa : </h1>
+        <p>@Model.Exception.Message</p>
+    </div>
+    <a href="~/Korijen/Korijen">Back to Korijen</a>
+</body>
+</html>

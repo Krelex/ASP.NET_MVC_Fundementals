@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <label>Prvi broj :</label>
+            <input type="text" name="brojA" />
+            <label>Drugi broj :</label>
+            <input type="text" name="brojB" />
+            @Html.DropDownList("operacija", new SelectList((char[])ViewBag.op , ViewBag.op) , "--Odaberite operaciju--")
+
+            <input type="submit" value="Izracunaj" />
+        }
+
+        @if (ViewBag.Rez != null)
+        {
+            <label>Rezultat je : @ViewBag.Rez</label>
+        }
+    </div>
+</body>
+</html>

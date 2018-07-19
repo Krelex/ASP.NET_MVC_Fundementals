@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Zbroj</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            <input type="text" name="brojA"/>
+            <input type="text" name="brojB" />
+
+            <input type="submit" value="Zbroj" />
+        }
+
+        @if(ViewBag.Rez != null)
+        {
+            <label> @ViewBag.Rez </label>
+        }
+    </div>
+</body>
+</html>
